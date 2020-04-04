@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <!-- page main start -->
+    <div class="page">
+        <div class="page-content h-100">
+            <div class="background">
+                <img src="../../../assets/img/background.png" alt="" />
+            </div>
+            <div class="row mx-0">
+                <div class="col">
+                    <!--<img src="img/logo.png" alt="" class="login-logo">-->
+                    <h1 class="login-title">
+                        <small>Chat App,</small><br>Company
+                    </h1>
+                </div>
+            </div>
+            <div class="row mx-0">
+                <div class="col">
+                    <ul class="nav nav-tabs login-tabs mt-3" role="tablist">
+                        <li class="nav-item">
+                            <a routerLink="/auth/login" routerLinkActive="active" class="nav-link border-white text-white">
+                                Đăng Nhập
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/auth/register" routerLinkActive="active" class="nav-link border-white text-white">
+                                Đăng Ký
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- tabs content start here -->
+                    <div class="tab-content">
+                        <router-outlet></router-outlet>
+                    </div>
+                    <!-- tabs content end here -->
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>

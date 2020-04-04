@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <!-- page main start -->
+    <div class="page">
+
+        <header class="row m-0 fixed-header">
+            <div class="left">
+                <a *ngIf="back" href="javascript:void(0)" onclick="window.history.back();">
+                    <i class="material-icons">keyboard_backspace</i>
+                </a>
+            </div>
+            <div class="col center text-center">
+                <a href="javascript:void(0)" class="logo">{{ title }}</a>
+            </div>
+            <div class="right">
+                <a *ngIf="back" href="javascript:void(0)">
+                </a>
+            </div>
+        </header>
+
+        <div class="page-content triangle-background">
+            <nav class="tabber tabber-bottom publish-tabs">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link" id="nav-cart-tab" data-toggle="tab">
+                        <i class="icon material-icons">chat<span class="badge color-red">5</span></i>
+                    </a>
+                    <a routerLink="/profile" routerLinkActive="active" class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab">
+                        <i class="icon material-icons">person</i>
+                    </a>
+                </div>
+            </nav>
+            <div class="tab-content h-100" id="nav-tabContent">
+                <div class="tab-pane fade show active" role="tabpanel">
+                    <div class="content-sticky-footer">
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page main ends -->
+</div>

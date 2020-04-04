@@ -1,0 +1,32 @@
+<div class="tab-pane" id="signin" role="tabpanel">
+    <form [formGroup]="loginForm" (submit)="login()">
+        <div class="login-input-content">
+            <div class="input-group" [ngClass]="{'error': loginForm.get('username').touched && !loginForm.get('username').valid}">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">person</i>
+                    </span>
+                </div>
+                <input formControlName="username" type="text" class="form-control" placeholder="Tên đăng nhập" maxlength="100">
+            </div>
+            <div class="input-group" [ngClass]="{'error': loginForm.get('password').touched && !loginForm.get('password').valid}">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">lock</i>
+                    </span>
+                </div>
+                <input formControlName="password" type="password" class="form-control" placeholder="Mật khẩu" maxlength="255">
+            </div>
+        </div>
+        <div class="row mx-0 justify-content-end no-gutters">
+            <div class="col-6">
+                <button [disabled]="!loginForm.valid" type="submit" class="btn btn-block gradient border-0 z-3">
+                    Đăng Nhập
+                </button>
+            </div>
+        </div>
+        <a routerLink="/auth/forgot" class="btn btn-link text-white btn-block text-center mt-3">
+            Quên Mật Khẩu?
+        </a>
+    </form>
+</div>

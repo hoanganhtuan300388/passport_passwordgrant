@@ -1,0 +1,12 @@
+@import url("../../../assets/vendor/bootstrap-4.1.3/css/bootstrap.min.css");
+@import url("../../../assets/vendor/materializeicon/material-icons.css");
+@import url("../../../assets/css/style.css");
+
+.input-group.error .input-group-text,
+.input-group.error .form-control {
+    color: red;
+}
+
+.input-group.error .form-control {
+    border-bottom: 1px solid red;
+}

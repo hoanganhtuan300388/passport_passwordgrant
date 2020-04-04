@@ -1,0 +1,180 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="memberForm" (submit)="editMemberInfo()" enctype="multipart/form-data">
+                <div class="card rounded-0 border-0 mb-3">
+                    <a class=" text-center d-block p-4 bg-light" href="#">
+                        <div class="w-100">
+                            <figure class="avatar avatar-120">
+                                <img src="{{ profile.avatar ? profile.avatar : '../../../assets/img/icon-user.png' }}" alt="">
+                            </figure>
+                        </div>
+                        <div class="media-body align-self-center">
+                            <h5 class="mt-2">{{ profile.username }}</h5>
+                        </div>
+                    </a>
+                    <br>
+                    <div class="card-body">
+                        <div class="form-group" [ngClass]="{'error': memberForm.get('name').touched && !memberForm.get('name').valid}">
+                            <label>Họ Tên</label>
+                            <input formControlName="name" type="text" class="form-control active" maxlength="100">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Quốc Gia</label>
+                                    <input formControlName="country" type="text" class="form-control active" maxlength="50">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group ">
+                                    <label>Thành Phố</label>
+                                    <input formControlName="city" type="text" class="form-control active" maxlength="50">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" [ngClass]="{'error': memberForm.get('birthday').touched && !memberForm.get('birthday').valid}">
+                            <label>Ngày Sinh</label>
+                            <input formControlName="birthday" type="date" class="form-control active">
+                        </div>
+
+                        <div class="form-group" [ngClass]="{'error': memberForm.get('gender').touched && !memberForm.get('gender').valid}">
+                            <label>Giới Tính</label>
+                            <select formControlName="gender" placeholder="Chọn giới tính..." class="form-control active">
+                                <option value="male">Nam</option>
+                                <option value="female">Nữ</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer p-0 border-0">
+                        <button [disabled]="!memberForm.valid" type="submit" class="btn btn-primary btn-block btn-lg rounded-0">Lưu Lại</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-12">
+            <form [formGroup]="contactForm" (submit)="editContactInfo()">
+                <div class="card rounded-0 border-0 mb-3">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="card-title">Thông Tin Liên Lạc</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group" [ngClass]="{'error': contactForm.get('email').touched && !contactForm.get('email').valid}">
+                            <label>Email</label>
+                            <input formControlName="email" type="text" class="form-control active" maxlength="200">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 w-100">
+                                <label>Di Động</label>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control active" readonly="readonly" value="+84">
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input formControlName="mobile_phone" type="text" class="form-control active" maxlength="12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 w-100">
+                                <label>Nhà Riêng</label>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control active" readonly="readonly" value="+84">
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input formControlName="home_phone" type="text" class="form-control active" maxlength="12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 w-100">
+                                <label>Văn Phòng</label>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <input type="text" class="form-control active" readonly="readonly" value="+84">
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="form-group">
+                                    <input formControlName="office_phone" type="text" class="form-control active" maxlength="12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Địa Chỉ 1</label>
+                            <input formControlName="address1" type="text" class="form-control active" maxlength="500">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Địa Chỉ 2</label>
+                            <input formControlName="address2" type="text" class="form-control active" maxlength="500">
+                        </div>
+                    </div>
+                    <div class="card-footer p-0 border-0">
+                        <button [disabled]="!contactForm.valid" type="submit" class="btn btn-primary btn-block btn-lg rounded-0">Lưu Lại</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-12">
+            <form [formGroup]="settingForm" (submit)="editSettingInfo()">
+                <div class="card rounded-0 border-0 mb-3">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5 class="card-title">Cài Đặt Trạng Thái</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="col-10">Hiển Thị Vị Trí</label>
+                            <label class="col-2 switch">
+                                <input formControlName="display_location" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-10">Hiển Thị Liên Hệ</label>
+                            <label class="col-2 switch">
+                                <input formControlName="display_contact" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-10">Nhận Email Khi Offline</label>
+                            <label class="col-2 switch">
+                                <input formControlName="offline_email" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card-footer p-0 border-0">
+                        <button [disabled]="!settingForm.valid" type="submit" class="btn btn-primary btn-block btn-lg rounded-0">Lưu Lại</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

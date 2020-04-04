@@ -1,0 +1,29 @@
+<div class="row mx-0 position-relative">
+    <div class="col my-4">
+        <a href="#" class="media user-column">
+            <div class="w-100">
+                <figure class="avatar avatar-120">
+                    <img src="{{ profile.avatar ? profile.avatar : '../../../assets/img/icon-user.png' }}" alt="">
+                </figure>
+            </div>
+            <div class="media-body align-self-center ">
+                <h5 class="mt-2">{{ profile.name }}</h5>
+                <p>
+                    <small>
+                        online <span class="status-online border bg-success"></span>
+                    </small>
+                    <br> {{ profile.contact.email }}
+                    <br> +84 {{ profile.contact.mobile_phone }}
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="row mx-0 mt-3">
+    <div class="col">
+        <a [routerLink]="['/profile/edit', {profile: profile | json}]" class="btn btn-block gradient border-0">Sửa Thông Tin</a>
+    </div>
+    <div class="col">
+        <a (click)="logout()" class="btn btn-block btn-outline-secondary">Đăng Xuất</a>
+    </div>
+</div>

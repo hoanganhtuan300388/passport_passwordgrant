@@ -1,0 +1,5 @@
+<div *ngIf="isToast | async"class="toast toast-bottom modal-in" (click)="hideToast()">
+    <div class="toast-content">
+        <div class="toast-text">{{ message }}</div>
+    </div>
+</div>

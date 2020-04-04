@@ -1,0 +1,18 @@
+<ul class="list-group list-group-flush chat-list">
+    <li *ngFor="let contact of contacts" class="list-group-item">
+        <a routerLink="/contact/{{ contact.id }}" class="media">
+            <div class="w-auto h-100">
+                <figure class="avatar avatar-40">
+                    <img src="{{ contact.avatar ? contact.avatar : '../../../assets/img/icon-user.png' }}" alt="">
+                </figure>
+            </div>
+            <div class="media-body">
+                <h5>
+                    {{ contact.contact_name }} 
+                    <span *ngIf="contact.contact_type === 'friend'" class="status-online bg-success"></span>
+                </h5>
+                <p>Hi</p>
+            </div>
+        </a>
+    </li>
+</ul>

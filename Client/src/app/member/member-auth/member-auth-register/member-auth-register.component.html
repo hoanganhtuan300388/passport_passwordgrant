@@ -1,0 +1,53 @@
+<div class="tab-pane" id="signup" role="tabpanel">
+    <form [formGroup]="registerForm" (submit)="register()">
+        <div class="login-input-content">
+            <div class="input-group" [ngClass]="{'error': registerForm.get('username').touched && !registerForm.get('username').valid}">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">person</i>
+                    </span>
+                </div>
+                <input formControlName="username" type="text" class="form-control" placeholder="Tên đăng nhập" maxlength="100">
+            </div>
+            <div class="input-group" [ngClass]="{'error': registerForm.get('password').touched && !registerForm.get('password').valid}">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">lock</i>
+                    </span>
+                </div>
+                <input formControlName="password" type="password" class="form-control" placeholder="Mật khẩu" maxlength="255">
+            </div>
+            <div class="input-group" [ngClass]="{'error': registerForm.get('password_confirmation').touched && !registerForm.get('password_confirmation').valid}">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">lock</i>
+                    </span>
+                </div>
+                <input formControlName="password_confirmation" type="password" class="form-control" placeholder="Mật khẩu nhập lại" maxlength="255">
+            </div>
+            <div class="input-group" [ngClass]="{'error': registerForm.get('email').touched && !registerForm.get('email').valid}">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">email</i>
+                    </span>
+                </div>
+                <input formControlName="email" type="email" class="form-control" placeholder="E-mail" maxlength="200">
+            </div>
+            <div class="input-group" [ngClass]="{'error': registerForm.get('name').touched && !registerForm.get('name').valid}">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">person_pin</i>
+                    </span>
+                </div>
+                <input formControlName="name" type="text" class="form-control" placeholder="Họ và tên" maxlength="100">
+            </div>
+        </div>
+        <div class="row mx-0 justify-content-end no-gutters">
+            <div class="col-6">
+                <button [disabled]="!registerForm.valid" type="submit" class="btn btn-block gradient border-0 z-3">
+                    Đăng Ký
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
