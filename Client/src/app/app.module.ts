@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { MemberModule } from './member/member.module';
@@ -35,6 +36,7 @@ const routes: Routes = [
     BrowserAnimationsModule
   ],
   providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     TokenService,
