@@ -25,7 +25,9 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::put('profile/setting', 'MemberController@editSetting')->name('members.editSetting');
     Route::post('friend', 'MemberController@friend')->name('members.friend');
     Route::post('group', 'MemberController@group')->name('members.group');
-    Route::get('contact', 'ContactController@index')->name('members.index');
+    Route::get('contact', 'ContactController@index')->name('contacts.index');
+    Route::get('contact/{id}/message', 'ContactController@show')->name('contacts.show')->where('id', '[0-9]+');
+    Route::post('contact/{id}/message', 'ContactController@message')->name('contacts.message')->where('id', '[0-9]+');
 
     Route::post('groups', 'GroupController@store')->name('groups.store');
 
