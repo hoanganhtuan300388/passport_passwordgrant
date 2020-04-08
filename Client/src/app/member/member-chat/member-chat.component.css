@@ -1,0 +1,131 @@
+.container {
+    position: absolute;
+}
+
+.container .col-12 {
+    overflow: hidden;
+}
+
+.container, .container .row, .container .col-12, .col-12 .card {
+    height: 100%;
+}
+
+.card-footer {
+    background-color: #fff;
+    border-top: 1px solid #e5e9ec;
+}
+
+.col-12 .card {
+    margin: 0px!important;
+}
+
+.col-12 .card-body {
+    height: 100%;
+    padding: 0px;
+    margin-bottom: -50px;
+}
+
+.chat_box {
+    height: 100%;
+    overflow-x: auto;
+    padding-bottom: 50px;
+}
+
+.message {
+    display: block !important;
+    font-size: 12px;
+    line-height: 1.3;
+    margin-left: 46px;
+    color: #000;
+    white-space: pre-line;
+}
+
+.input-group-append, .input-group-prepend {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.input-group-prepend {
+    margin-right: -1px;
+}
+
+.right_align_me, .left_align_me {
+    overflow: hidden;
+    margin: 15px 0px;
+}
+
+.left_align_me img {
+    float: left;
+    height: 40px;
+    width: 40px;
+}
+
+.right_align_me img {
+    height: 40px;
+    width: 40px;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.left_align_me .chat-info {
+    float: left;
+    background: #f7f7f7;
+    max-width: calc(100% - 60px);
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.left_align_me .message, .right_align_me .message {
+    margin: 0px;
+    font-size: 14px;
+}
+
+.left_align_me .chat-info::before {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #f7f7f7;
+    left: -10px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    content: '';
+    position: absolute;
+    top: 12px;
+}
+
+.right_align_me img {
+    float: right;
+}
+
+.right_align_me .chat-info {
+    background: #49c5b6;
+    color: #fff;
+    text-align: right;
+    margin-right: 20px;
+    max-width: calc(100% - 60px);
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    float: right;
+}
+
+.right_align_me .chat-info::before {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #49c5b6;
+    right: -8px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    content: '';
+    position: absolute;
+    top: 12px;
+}
+
+.right_align_me .message {
+    color: #fff;
+}

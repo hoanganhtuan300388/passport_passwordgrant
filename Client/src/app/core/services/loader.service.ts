@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpRequest } from "@angular/common/http";
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -10,12 +11,16 @@ export class LoaderService {
 
   constructor() { }
 
-  show() {
-    this.isLoading.next(true);
+  show(request: HttpRequest<any>) {
+    if (request.url.indexOf('message') === -1) {
+      this.isLoading.next(true);
+    }
   }
 
-  hide() {
-    this.isLoading.next(false);
+  hide(request: HttpRequest<any>) {
+    if (request.url.indexOf('message') === -1) {
+      this.isLoading.next(false);
+    }
   }
-  
+
 }

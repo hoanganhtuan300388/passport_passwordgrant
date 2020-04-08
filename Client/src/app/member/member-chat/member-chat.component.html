@@ -1,1 +1,34 @@
-<p>member-chat works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card rounded-0 border-0 mb-3">
+                <div class="card-body">
+                    <div #scrollMessage class="chat_box scroll_auto">
+                        <div style="padding: 10px 15px">
+                            <div *ngFor="let message of messages" class="{{ message.member_id == profile.id ? 'right_align_me' : 'left_align_me' }}">
+                                <img src="{{ message.member.avatar ? message.member.avatar : '../../../assets/img/icon-user.png' }}" alt="" class="rounded-circle">
+                                <div class="chat-info">
+                                    <span class="message">
+                                        {{ message.content }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <div class="card-footer p-0 border-0">
+                    <form [formGroup]="sendMessageForm" (submit)="sendMessage()">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button [disabled]="!sendMessageForm.valid" type="submit" class="input-group-text">
+                                    <i class="material-icons">send</i>
+                                </button>
+                            </div>
+                            <input formControlName="content" type="text" class="form-control" placeholder="Nhập văn bản ở đây...">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

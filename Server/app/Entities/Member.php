@@ -87,4 +87,12 @@ class Member extends Authenticatable
         return $this->belongsToMany(Member::class,'contacts', 'member_id', 'friend_id');
     }
 
+    /**
+     * Get the messages for the member.
+     */
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'member_id', 'id');
+    }
+
 }

@@ -11,7 +11,7 @@
                     {{ contact.contact_name }} 
                     <span *ngIf="contact.contact_type === 'friend'" class="status-online bg-success"></span>
                 </h5>
-                <p>Hi</p>
+                <p>{{ contact.message[0] ? contact.message[0].content : '' }}</p>
             </div>
         </a>
     </li>
